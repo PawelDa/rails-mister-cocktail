@@ -1,5 +1,7 @@
+<%= render 'shared/navbar' %>
 
-
-<% @ingriendients.each do |ingriendient| %>
-  <%= ingriendient.name %>
-<% end %>
+<div>
+  <% @ingriendients.each do |ingriendient| %>
+    <%= ingriendient.name %>
+  <% end %>
+</div>

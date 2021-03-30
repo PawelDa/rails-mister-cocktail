@@ -1,0 +1,7 @@
+<%= render 'shared/navbar' %>
+
+<div>
+  <% @cocktails.each do |cocktail| %>
+    <%= cocktail.name %>
+  <% end %>
+</div>
