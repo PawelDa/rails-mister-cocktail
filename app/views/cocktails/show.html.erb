@@ -1,4 +1,6 @@
 <div>
   <%= @cocktail.name %>
 </div>
-<%= link_to "Go back", root_path %>
+<%= link_to "back", root_path %>
+<%= link_to 'edit', edit_cocktail_path(@cocktail)%>
+<%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'} %>
