@@ -1,6 +1,16 @@
 <div>
   <%= @cocktail.name %>
-</div>
-<%= link_to "back", root_path %>
+  <% @cocktail.doses.each do |dose| %>
+    <%= dose.description %> 
+    <%= dose.ingredient.name %> 
+    <%= link_to 'delete', cocktail_doses_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+<%= link_to 'back', root_path %>
 <%= link_to 'edit', edit_cocktail_path(@cocktail)%>
 <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'} %>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: "select2" } %>
+  <%= f.input :description, placeholder: "e.g. 25ml" %>
+  <%= f.submit "Add dose"%>
+<% end %>
