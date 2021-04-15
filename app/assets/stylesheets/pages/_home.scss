@@ -1,6 +1,14 @@
 // Specific CSS for your home-page
 
-.cocktail_icon{
+body {
+  background-color: grey;
+  background-image: asset-url('home_background.jpg');
+}
+
+h1 {
+  color: white;
+}
+
+.cocktail_icon {
     height: 200px;
-  }
-  
+}
