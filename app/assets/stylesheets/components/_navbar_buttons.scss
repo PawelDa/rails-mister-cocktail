@@ -1,9 +1,15 @@
 .navbar-buttons {
+  width: 176px;
   text-decoration: none;
   color: white;
-  background-color: blue;
+  background-color:rgb(140, 140, 140);
+  padding: 8px 24px;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .navbar-buttons:hover {
-    text-decoration: none;
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
 }
