@@ -1,17 +1,15 @@
-<div id="cocktails-div">
+<div id="cocktails_container">
   <div>
     <h1>All cocktails!</h1>
   </div>
-  <div>
+  <div class="cocktails_box">
     <% @cocktails.each do |cocktail| %>
-      <div class="cocktail_card">
-        <%= link_to cocktail_path(cocktail) do %>
-          <div>
+    <div class="cocktail_card">
+          <%= link_to cocktail_path(cocktail) do %>
             <div><img src="https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" class='cocktail_icon' />
             <div><%= cocktail.name %></div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+    </div>
     <% end %>
   </div>
 </div>

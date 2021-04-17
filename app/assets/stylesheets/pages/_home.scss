@@ -13,6 +13,13 @@ h1 {
   width: 200px;
 }
 
-#cocktails-div {
+#cocktails_container {
+  height: auto;
   background-image: asset-url('home_background.jpg');
+  background-size: cover;
+}
+
+.cocktails_box {
+  width: auto;
+  display: inline-block;
 }
