@@ -1,10 +1,42 @@
 #main-section {
   background-image: image-url('home_background.jpg');
   background-size: cover;
-  color: white;
+  color: rgb(240, 240, 240);
   text-align: center;
 }
 
-#coctails-card {
+#coctails-container {
   display: flex;
+}
+
+.cocktail-card {
+  text-decoration: none;
+  border: solid  rgb(200, 200, 200);
+
+  img {
+    height: 200px;
+    width: 200px;
+
+  }
+  div {
+    width: 200px;
+    height: 32px;
+    background: rgb(140, 140, 140);
+    color: white;
+    text-align: center;
+    padding: auto;
+    h3 {
+      font-size: 16px;
+      text-align: center;
+      padding: auto;
+    }
+  }
+}
+
+.cocktail-card:hover {
+  border: solid rgb(80, 80, 80);
+
+  div {
+    background-color: rgb(80, 80, 80);
+  }
 }
