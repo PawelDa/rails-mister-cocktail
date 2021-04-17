@@ -7,11 +7,13 @@
 
 #coctails-container {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .cocktail-card {
   text-decoration: none;
   border: solid  rgb(200, 200, 200);
+  margin: 16px;
 
   img {
     height: 200px;
