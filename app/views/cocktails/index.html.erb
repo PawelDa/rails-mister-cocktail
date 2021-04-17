@@ -1,8 +1,13 @@
-<div id="coctails-card">
-  <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail) do %>
-      <img src="https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" height=200px />
-      <%= cocktail.name %>
+<div id="main-section">
+  <div>
+    <h1>Add your favourite cocktails!</h1>
+  </div>
+  <div id="coctails-card">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <img src="https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" height=200px />
+        <%= cocktail.name %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
