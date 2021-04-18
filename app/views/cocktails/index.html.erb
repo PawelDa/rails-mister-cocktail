@@ -3,14 +3,18 @@
     <h1>Add your favourite cocktails!</h1>
   </div>
   <div id="coctails-container">
-    <% @cocktails.each do |cocktail| %>
-      <div class="cocktail-card">
-        <%= link_to cocktail_path(cocktail) do %>
-          <img src="https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" />
-          <a href=""></a>
-          <div><h3><%= cocktail.name %></h3></div>
-        <% end %>
+    <div class="row g-0">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-12 col-sm-4 col-lg-3">
+        <div class="cocktail-card">
+          <%= link_to cocktail_path(cocktail) do %>
+            <img src="https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" />
+            <a href=""></a>
+            <div><h3><%= cocktail.name %></h3></div>
+          <% end %>
+        </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
