@@ -1,22 +1,26 @@
 <div class="d-flex">
-  <div>
+  <div class="m-3">
     <div>
       <div>
         <%= @cocktail.name %>
         <%= link_to 'edit', edit_cocktail_path(@cocktail)%>
         <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'} %>
       </div>
-      <div><%= image_tag "https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" %></div>
+      <div><%= image_tag "https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg", :size => "400x400"%></div>
     </div>
   </div>
-  <div>
+  <div class="m-3">
     <div>
       <% @cocktail.doses.each do |dose| %>
-        <%= dose.description %> 
-        <%= dose.ingredient.name %> 
-        <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+        <div>
+          <%= dose.description %> 
+          <%= dose.ingredient.name %> 
+          <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
       <% end %>
     </div>
+  </div>
+  <div class="m-3">
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: "select2" } %>
       <%= f.input :description, placeholder: "e.g. 100 ml" %>
@@ -24,4 +28,3 @@
     <% end %>
   </div>
 </div>
-
