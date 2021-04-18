@@ -1,18 +1,27 @@
-<div>
+<div class="d-flex">
   <div>
-    <div><%= @cocktail.name %></div>
-    <div><%= image_tag "https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" %> </div>
+    <div>
+      <div>
+        <%= @cocktail.name %>
+        <%= link_to 'edit', edit_cocktail_path(@cocktail)%>
+        <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'} %>
+      </div>
+      <div><%= image_tag "https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" %></div>
+    </div>
   </div>
-  <% @cocktail.doses.each do |dose| %>
-    <%= dose.description %> 
-    <%= dose.ingredient.name %> 
-    <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<%= link_to 'edit', edit_cocktail_path(@cocktail)%>
-<%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'} %>
+  <div>
+    <div>
+      <% @cocktail.doses.each do |dose| %>
+        <%= dose.description %> 
+        <%= dose.ingredient.name %> 
+        <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: "select2" } %>
+      <%= f.input :description, placeholder: "e.g. 100 ml" %>
+      <%= f.submit "Add dose"%>
+    <% end %>
+  </div>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: "select2" } %>
-  <%= f.input :description, placeholder: "e.g. 100 ml" %>
-  <%= f.submit "Add dose"%>
-<% end %>
