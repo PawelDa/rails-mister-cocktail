@@ -2,6 +2,8 @@ class CocktailsController < ApplicationController
   before_action :find_cocktail, only: [:show, :edit, :update, :destroy]
   def index
     @cocktails = Cocktail.all
+    t = Time.now
+    @time = "#{t.day}/#{t.month}/#{t.year} #{t.hour}:#{t.min}"
   end
 
   def show
