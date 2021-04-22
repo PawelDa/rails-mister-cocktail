@@ -1,5 +1,29 @@
-.main-form-div {
+#edit-container {
+  border: solid  rgb(200, 200, 200);
+  height: fit-content;
+  width: fit-content;
+  
+}
+
+.edit-and-create-form {
+  width: fit-content;
+  height: fit-content;
+  background: rgb(200, 200, 200);
+  border: solid rgb(200, 200, 200);
+  width: 400px;
+}
+
+#form-title {
+  width: 400px;
+  height: 64px;
+  background: rgb(140, 140, 140);
+  color: white;
   display: flex;
-  margin: 0;
-  height: calc(100vh - 104px);
+  h1 {
+      color: white;
+      text-shadow: 1px 1px 8px rgb(80, 80, 80);
+      font-size: 24px;
+      padding: 0;
+      margin: auto;
+  }
 }

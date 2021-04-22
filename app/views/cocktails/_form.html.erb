@@ -1,8 +1,7 @@
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-<div class="main-form-div">
-  <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-</div>
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
+
