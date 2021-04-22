@@ -19,9 +19,14 @@
 
 #shuffle_button {
   background-image: image-url('dice.png');
-  width: 176px;
+  background-size: 48px 34px;
+  background-position: center;
+  width: 200x;
   height: 48px;
   background-color:rgb(140, 140, 140);
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin: 8px;
 }
 
 #shuffle_button:hover {
