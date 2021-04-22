@@ -32,3 +32,14 @@
 #shuffle_button:hover {
   background-color: rgb(80, 80, 80);
 }
+
+#clock-and-date {
+  padding: 8px 24px;
+  width: 200x;
+  height: 48px;
+  h3 {
+    color: white;
+    text-shadow: 1px 1px 8px rgb(80, 80, 80);
+    font-size: 24px;
+  }
+}
