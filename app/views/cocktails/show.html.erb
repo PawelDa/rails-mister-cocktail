@@ -12,8 +12,8 @@
         <% end %>
       </div>
       <div id="showcard-buttons-container">
-        <%= link_to 'edit', edit_cocktail_path(@cocktail), class: "showcard-buttons"%>
-        <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'}, class: "showcard-buttons" %>
+        <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: "showcard-buttons"%>
+        <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'}, class: "showcard-buttons" %>
       </div>
     </div>
   </div>
@@ -25,17 +25,20 @@
           <div class="doses-details">
             <%= dose.description %> 
             <%= dose.ingredient.name %> 
-            <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "doses-button" %>
+            <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "doses-button" %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="m-3">
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: "select2" } %>
-      <%= f.input :description, placeholder: "e.g. 100 ml" %>
-      <%= f.submit "Add dose"%>
-    <% end %>
+  <div class="m-3 add-dose-form">
+    <div id="cocktail-ingredients-show"><h1>Add ingredient</h1></div>
+    <div class="form">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: "select2" } %>
+        <%= f.input :description, placeholder: "e.g. 100 ml" %>
+        <div id="add-button-container"><%= f.submit "Add", class: "add-button"%></div>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :get_time, :draw_cocktail
   def get_time
     t = Time.now
-    @time = "#{t.day}/#{t.month}/#{t.year} #{t.hour}:#{t.min}"
+    @time = t.strftime("%d/%m/%Y %I:%M %p")
   end
 
   def draw_cocktail

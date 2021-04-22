@@ -1,6 +1,10 @@
 .cocktail-show-card {
+    padding-top: 80px;
     display: flex;
+    justify-content: space-evenly;
     height: calc(100vh - 104px);
+    background-image: image-url('background-show.jpg');
+    background-size: cover;
 }
 
 #cocktail-show {
@@ -12,7 +16,7 @@
 #cocktail-name-show {
     width: 400px;
     height: 64px;
-    background: rgb(200, 200, 200);
+    background: rgb(140, 140, 140);
     color: white;
     display: flex;
     h1 {
@@ -61,7 +65,7 @@
 #cocktail-ingredients-show {
     width: 400px;
     height: 64px;
-    background: rgb(200, 200, 200);
+    background: rgb(140, 140, 140);
     color: white;
     display: flex;
     h1 {
@@ -89,6 +93,32 @@
 }
 
 .doses-button {
+  width: 100px;
+  height: 24px;
+  text-decoration: none;
+  color: white;
+  background-color:rgb(140, 140, 140);
+  padding: auto;
+  border-radius: 4px;
+  text-align: center;
+  margin: 8px;
+  font-size: 16px;
+}
+  
+.doses-button:hover {
+  text-decoration: none;
+  background-color: rgb(80, 80, 80);
+  color: white;
+}
+
+.add-dose-form {
+  width: fit-content;
+  height: fit-content;
+  background: rgb(200, 200, 200);
+  border: solid rgb(200, 200, 200);
+}
+
+.add-button {
     width: 100px;
     height: 24px;
     text-decoration: none;
@@ -99,10 +129,23 @@
     text-align: center;
     margin: 8px;
     font-size: 16px;
-  }
-  
-  .doses-button:hover {
+    border: none;
+}
+    
+.add-button:hover {
     text-decoration: none;
     background-color: rgb(80, 80, 80);
     color: white;
-  }
+}
+
+.form {
+  color: white;
+  text-shadow: 1px 1px 8px rgb(80, 80, 80);
+  padding: 8px;
+}
+
+#add-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
