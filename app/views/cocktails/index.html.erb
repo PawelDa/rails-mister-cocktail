@@ -1,6 +1,6 @@
 <div id="main-section">
-  <div>
-    <h1>Welcome to my cocktail manager!</h1>
+  <div id="welcome-message">
+    <h1>Welcome to cocktail party!</h1>
   </div>
   <div id="coctails-container">
     <div class="row g-0">
@@ -8,7 +8,6 @@
       <div class="col-12 col-sm-4 col-lg-3">
         <div class="cocktail-card">
           <%= link_to cocktail_path(cocktail) do %>
-            <!-- <img src="https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg" /> -->
             <% if cocktail.photo.attached? %>
               <%= cl_image_tag cocktail.photo.key, height: 200, width: 200, crop: :fill %>
             <% else %>

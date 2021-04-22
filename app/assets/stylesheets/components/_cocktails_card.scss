@@ -11,6 +11,15 @@
   margin: 0;
 }
 
+#welcome-message {
+  padding: 24px;
+  h1 {
+    color: rgb(240, 240, 240);
+    text-shadow: 3px 3px 3px black;
+    font-size: 45px;
+  }
+}
+
 #coctails-container {
   display: flex;
   justify-content: space-evenly;

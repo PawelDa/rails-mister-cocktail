@@ -16,3 +16,14 @@
   background-color: rgb(80, 80, 80);
   color: white;
 }
+
+#shuffle_button {
+  background-image: image-url('dice.png');
+  width: 176px;
+  height: 48px;
+  background-color:rgb(140, 140, 140);
+}
+
+#shuffle_button:hover {
+  background-color: rgb(80, 80, 80);
+}
