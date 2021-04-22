@@ -1,3 +1,7 @@
+#buttons {
+  margin-right: 24px;
+}
+
 .navbar-buttons {
   width: 176px;
   height: 48px;
@@ -34,12 +38,16 @@
 }
 
 #clock-and-date {
-  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
   width: 200x;
   height: 48px;
   h3 {
     color: white;
     text-shadow: 1px 1px 8px rgb(80, 80, 80);
     font-size: 24px;
+    padding: 0;
+    margin: auto;
   }
 }

@@ -1,10 +1,8 @@
 <div class="d-flex cocktail-show-card">
   <div class="m-3">
-    <div>
-      <div>
-        <%= @cocktail.name %>
-        <%= link_to 'edit', edit_cocktail_path(@cocktail)%>
-        <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'} %>
+    <div id="cocktail-show">
+      <div id='cocktail-name-show'>
+        <h1><%= @cocktail.name %></h1>
       </div>
       <div>
         <% if @cocktail.photo.attached? %>
@@ -13,17 +11,24 @@
           <%= image_tag "https://www.acouplecooks.com/wp-content/uploads/2019/09/Whiskey-Sour-111s.jpg", :size => "400x400"%>
         <% end %>
       </div>
+      <div id="showcard-buttons-container">
+        <%= link_to 'edit', edit_cocktail_path(@cocktail), class: "showcard-buttons"%>
+        <%= link_to 'delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?'}, class: "showcard-buttons" %>
+      </div>
     </div>
   </div>
   <div class="m-3">
-    <div>
-      <% @cocktail.doses.each do |dose| %>
-        <div>
-          <%= dose.description %> 
-          <%= dose.ingredient.name %> 
-          <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
-        </div>
-      <% end %>
+    <div id="ingredients-container">
+      <div id="cocktail-ingredients-show"><h1>Ingredients</h1></div>
+      <div id="cocktail-doses-show">
+        <% @cocktail.doses.each do |dose| %>
+          <div class="doses-details">
+            <%= dose.description %> 
+            <%= dose.ingredient.name %> 
+            <%= link_to 'delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "doses-button" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="m-3">
