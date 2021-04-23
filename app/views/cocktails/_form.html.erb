@@ -3,6 +3,10 @@
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
-    <div id="add-button-container"><%= f.submit "Update", class: "add-button"%></div>
+    <% if action_name == "new" %>
+      <div id="add-button-container"><%= f.submit "Create", class: "add-button"%></div>
+    <% else %>
+      <div id="add-button-container"><%= f.submit "Update", class: "add-button"%></div>
+    <% end %>
   <% end %>
 </div>
