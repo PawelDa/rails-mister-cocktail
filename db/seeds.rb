@@ -81,10 +81,15 @@ Dose.create(description: "3 ounces", ingredient_id: 107, cocktail_id: aperol_spr
 Dose.create(description: "1 ounce", ingredient_id: 104, cocktail_id: aperol_spritz.id)
 Dose.create(description: "slice", ingredient_id: 73, cocktail_id: aperol_spritz.id)
 Dose.create(description: "cube", ingredient_id: 101, cocktail_id: margarita.id)
-
 puts "#{aperol_spritz.name} created!"
 
 sex_on_the_beach = Cocktail.create(name: 'Sex on the beach')
+sex_on_the_beach.photo.attach(io: File.open('app/assets/images/sex_on_the_beach.jpg'), filename: "sex_on_the_beach.jpg", content_type: 'image/jpg')
+Dose.create(description: "2 ounces", ingredient_id: 22, cocktail_id: sex_on_the_beach.id)
+Dose.create(description: "1 ounce", ingredient_id: 66, cocktail_id: sex_on_the_beach.id)
+Dose.create(description: "2 ounces", ingredient_id: 41, cocktail_id: sex_on_the_beach.id)
+Dose.create(description: "2 ounces", ingredient_id: 78, cocktail_id: sex_on_the_beach.id)
+Dose.create(description: "tablespoon", ingredient_id: 48, cocktail_id: sex_on_the_beach.id)
 puts "#{sex_on_the_beach.name} created!"
 
 vodka_martini = Cocktail.create(name: 'Vodka martini')
