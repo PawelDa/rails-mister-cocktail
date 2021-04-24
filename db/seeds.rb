@@ -17,10 +17,19 @@ json["drinks"].each do |ingredient|
 end
 created_ingredient = Ingredient.create(name: "Ice")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Mint")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "White rum")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Sparkling water")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+
 puts "All ingredients were created!"
 sleep(1)
+
 puts "Let's create some cocktails ;)"
 sleep(1)
+
 old_fashioned = Cocktail.create(name: 'Old Fashioned')
 old_fashioned.photo.attach(io: File.open('app/assets/images/old_fashioned.jpg'), filename: "old_fashioned.jpg", content_type: 'image/jpg')
 Dose.create(description: "2 ounces", ingredient_id: 20, cocktail_id: old_fashioned.id)
@@ -34,12 +43,19 @@ espresso_martini = Cocktail.create(name: 'Espresso martini')
 espresso_martini.photo.attach(io: File.open('app/assets/images/espresso_martini.jpg'), filename: "espresso_martini.jpg", content_type: 'image/jpg')
 Dose.create(description: "2 ounces", ingredient_id: 22, cocktail_id: espresso_martini.id)
 Dose.create(description: "1/2 ounce", ingredient_id: 19, cocktail_id: espresso_martini.id)
-Dose.create(description: "freshly brewed 1 ounce", ingredient_id: 71, cocktail_id: espresso_martini.id)
+Dose.create(description: "1 ounce", ingredient_id: 71, cocktail_id: espresso_martini.id)
 Dose.create(description: "1/2 ounce", ingredient_id: 49, cocktail_id: espresso_martini.id)
 Dose.create(description: "cube", ingredient_id: 101, cocktail_id: espresso_martini.id)
 puts "#{espresso_martini.name} created!"
 
 mojito = Cocktail.create(name: 'Mojito')
+mojito.photo.attach(io: File.open('app/assets/images/mojito.jpg'), filename: "mojito.jpg", content_type: 'image/jpg')
+Dose.create(description: "3 leaves", ingredient_id: 102, cocktail_id: mojito.id)
+Dose.create(description: "1/2 ounce", ingredient_id: 49, cocktail_id: mojito.id)
+Dose.create(description: "2 ounces", ingredient_id: 103, cocktail_id: mojito.id)
+Dose.create(description: "3/4 ounces", ingredient_id: 30, cocktail_id: mojito.id)
+Dose.create(description: "to top", ingredient_id: 104, cocktail_id: mojito.id)
+Dose.create(description: "garnish", ingredient_id: 102, cocktail_id: mojito.id)
 puts "#{mojito.name} created!"
 
 margarita = Cocktail.create(name: 'Margarita')
