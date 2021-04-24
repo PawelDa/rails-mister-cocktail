@@ -30,8 +30,14 @@ Dose.create(description: "cube", ingredient_id: 101, cocktail_id: old_fashioned.
 Dose.create(description: "pell", ingredient_id: 73, cocktail_id: old_fashioned.id)
 puts "#{old_fashioned.name} created!"
 
-esspressp_martini = Cocktail.create(name: 'Espresso martini')
-puts "#{esspressp_martini.name} created!"
+espresso_martini = Cocktail.create(name: 'Espresso martini')
+espresso_martini.photo.attach(io: File.open('app/assets/images/espresso_martini.jpg'), filename: "espresso_martini.jpg", content_type: 'image/jpg')
+Dose.create(description: "2 ounces", ingredient_id: 22, cocktail_id: espresso_martini.id)
+Dose.create(description: "1/2 ounce", ingredient_id: 19, cocktail_id: espresso_martini.id)
+Dose.create(description: "freshly brewed 1 ounce", ingredient_id: 71, cocktail_id: espresso_martini.id)
+Dose.create(description: "1/2 ounce", ingredient_id: 49, cocktail_id: espresso_martini.id)
+Dose.create(description: "cube", ingredient_id: 101, cocktail_id: espresso_martini.id)
+puts "#{espresso_martini.name} created!"
 
 mojito = Cocktail.create(name: 'Mojito')
 puts "#{mojito.name} created!"
