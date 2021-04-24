@@ -29,6 +29,10 @@ created_ingredient = Ingredient.create(name: "Prosecco")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 created_ingredient = Ingredient.create(name: "Aperol")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Olive brine")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Olive")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 
 puts "All ingredients were created!"
 sleep(1)
@@ -92,7 +96,12 @@ Dose.create(description: "2 ounces", ingredient_id: 78, cocktail_id: sex_on_the_
 Dose.create(description: "tablespoon", ingredient_id: 48, cocktail_id: sex_on_the_beach.id)
 puts "#{sex_on_the_beach.name} created!"
 
-vodka_martini = Cocktail.create(name: 'Vodka martini')
-puts "#{vodka_martini.name} created!"
+dirty_martini = Cocktail.create(name: 'Dirty martini')
+dirty_martini.photo.attach(io: File.open('app/assets/images/dirty_martini.jpg'), filename: "dirty_martini.jpg", content_type: 'image/jpg')
+Dose.create(description: "2 1/2 ounces", ingredient_id: 22, cocktail_id: dirty_martini.id)
+Dose.create(description: "1/2 ounce", ingredient_id: 15, cocktail_id: dirty_martini.id)
+Dose.create(description: "1/2 ounce", ingredient_id: 108, cocktail_id: dirty_martini.id)
+Dose.create(description: "2 to 4", ingredient_id: 109, cocktail_id: dirty_martini.id)
+puts "#{dirty_martini.name} created!"
 
 puts 'Database seeded!'
