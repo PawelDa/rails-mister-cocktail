@@ -25,6 +25,10 @@ created_ingredient = Ingredient.create(name: "Sparkling water")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 created_ingredient = Ingredient.create(name: "Orange liqueur")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Prosecco")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Aperol")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 
 puts "All ingredients were created!"
 sleep(1)
@@ -71,6 +75,13 @@ Dose.create(description: "wedge", ingredient_id: 54, cocktail_id: margarita.id)
 puts "#{margarita.name} created!"
 
 aperol_spritz = Cocktail.create(name: 'Aperol spritz')
+aperol_spritz.photo.attach(io: File.open('app/assets/images/aperol_spritz.jpg'), filename: "aperol_spritz.jpg", content_type: 'image/jpg')
+Dose.create(description: "3 ounces", ingredient_id: 106, cocktail_id: aperol_spritz.id)
+Dose.create(description: "3 ounces", ingredient_id: 107, cocktail_id: aperol_spritz.id)
+Dose.create(description: "1 ounce", ingredient_id: 104, cocktail_id: aperol_spritz.id)
+Dose.create(description: "slice", ingredient_id: 73, cocktail_id: aperol_spritz.id)
+Dose.create(description: "cube", ingredient_id: 101, cocktail_id: margarita.id)
+
 puts "#{aperol_spritz.name} created!"
 
 sex_on_the_beach = Cocktail.create(name: 'Sex on the beach')
