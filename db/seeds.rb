@@ -33,6 +33,8 @@ created_ingredient = Ingredient.create(name: "Olive brine")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 created_ingredient = Ingredient.create(name: "Olive")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Campari")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 
 puts "All ingredients were created!"
 sleep(1)
@@ -103,5 +105,13 @@ Dose.create(description: "1/2 ounce", ingredient_id: 15, cocktail_id: dirty_mart
 Dose.create(description: "1/2 ounce", ingredient_id: 108, cocktail_id: dirty_martini.id)
 Dose.create(description: "2 to 4", ingredient_id: 109, cocktail_id: dirty_martini.id)
 puts "#{dirty_martini.name} created!"
+
+negroni = Cocktail.create(name: 'Negroni')
+negroni.photo.attach(io: File.open('app/assets/images/negroni.jpg'), filename: "negroni.jpg", content_type: 'image/jpg')
+Dose.create(description: "1 ounce", ingredient_id: 3, cocktail_id: negroni.id)
+Dose.create(description: "1 ounce", ingredient_id: 110, cocktail_id: negroni.id)
+Dose.create(description: "1 ounce", ingredient_id: 5, cocktail_id: negroni.id)
+Dose.create(description: "peel", ingredient_id: 73, cocktail_id: negroni.id)
+puts "#{negroni.name} created!"
 
 puts 'Database seeded!'
