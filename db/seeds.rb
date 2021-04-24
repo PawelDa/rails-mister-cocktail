@@ -23,6 +23,8 @@ created_ingredient = Ingredient.create(name: "White rum")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 created_ingredient = Ingredient.create(name: "Sparkling water")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Orange liqueur")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 
 puts "All ingredients were created!"
 sleep(1)
@@ -59,6 +61,13 @@ Dose.create(description: "garnish", ingredient_id: 102, cocktail_id: mojito.id)
 puts "#{mojito.name} created!"
 
 margarita = Cocktail.create(name: 'Margarita')
+margarita.photo.attach(io: File.open('app/assets/images/margarita.jpg'), filename: "margarita.jpg", content_type: 'image/jpg')
+Dose.create(description: "1 1/2 ounce", ingredient_id: 21, cocktail_id: margarita.id)
+Dose.create(description: "1 ounce", ingredient_id: 105, cocktail_id: margarita.id)
+Dose.create(description: "3/4 ounce", ingredient_id: 30, cocktail_id: margarita.id)
+Dose.create(description: "optional", ingredient_id: 49, cocktail_id: margarita.id)
+Dose.create(description: "cube", ingredient_id: 101, cocktail_id: margarita.id)
+Dose.create(description: "wedge", ingredient_id: 54, cocktail_id: margarita.id)
 puts "#{margarita.name} created!"
 
 aperol_spritz = Cocktail.create(name: 'Aperol spritz')
