@@ -23,8 +23,8 @@
       <div id="cocktail-doses-show">
         <% @cocktail.doses.each do |dose| %>
           <div class="doses-details">
+            <%= dose.ingredient.name + ':' %> 
             <%= dose.description %> 
-            <%= dose.ingredient.name %> 
             <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "doses-button" %>
           </div>
         <% end %>
