@@ -37,6 +37,8 @@ created_ingredient = Ingredient.create(name: "Campari")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 created_ingredient = Ingredient.create(name: "Cachaça")
 puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
+created_ingredient = Ingredient.create(name: "Coconut cream")
+puts "Ingredient #{created_ingredient.id}: #{created_ingredient.name} created!"
 
 puts "All ingredients were created!"
 sleep(1)
@@ -123,5 +125,13 @@ Dose.create(description: "2 teaspoons", ingredient_id: 25, cocktail_id: caipirin
 Dose.create(description: "1 cut into wedges", ingredient_id: 111, cocktail_id: caipirinha.id)
 Dose.create(description: "wheel garnish", ingredient_id: 56, cocktail_id: caipirinha.id)
 puts "#{caipirinha.name} created!"
+
+pina_colada = Cocktail.create(name: 'Piña Colada')
+pina_colada.photo.attach(io: File.open('app/assets/images/pina_colada.jpg'), filename: "pina_colada.jpg", content_type: 'image/jpg')
+Dose.create(description: "2 ounces", ingredient_id: 40, cocktail_id: pina_colada.id)
+Dose.create(description: "1 1/2 ounces", ingredient_id: 112, cocktail_id: pina_colada.id)
+Dose.create(description: "1 1/2 ounces", ingredient_id: 47, cocktail_id: pina_colada.id)
+Dose.create(description: "1/2 ounce", ingredient_id: 30, cocktail_id: pina_colada.id)
+puts "#{pina_colada.name} created!"
 
 puts 'Database seeded!'
