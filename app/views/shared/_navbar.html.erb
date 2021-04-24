@@ -1,6 +1,18 @@
 <div id="my-navbar">
   <div id="clock-and-date">
-    <h3 ><%= @time %></h3>
+    <% if @day == 'Monday' %>
+      <h3>Even though it’s Monday act like it’s Saturday!</h3>
+    <% elsif @day == 'Tuesday' %>
+      <h3>Only 3 days left untill Friday!</h3>
+    <% elsif @day == 'Wednesday' %>
+      <h3>Only 2 days left untill Friday!</h3>
+    <% elsif @day == 'Thursday' %>
+      <h3>It's almost Friday!</h3>
+    <% elsif @day == 'Friday' %>
+      <h3>It’s Friday! Let’s have a drink!</h3>
+    <% elsif ['Saturday', 'Sunday'].include?(@day) %>
+      <h3>It's weekend! Time for a cocktail!</h3>
+    <% end %>
   </div>
   <div id="buttons">
     <% if action_name == "index" %>
