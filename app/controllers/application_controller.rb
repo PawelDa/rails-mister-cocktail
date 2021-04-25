@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   end
 
   def draw_cocktail
-    @drawn_cocktail = Cocktail.all.shuffle.first
+    @drawn_cocktail = Cocktail.all.shuffle.first.id
   end
 end
